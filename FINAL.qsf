@@ -1,0 +1,116 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, the Altera Quartus II License Agreement,
+# the Altera MegaCore Function License Agreement, or other 
+# applicable license agreement, including, without limitation, 
+# that your use is for the sole purpose of programming logic 
+# devices manufactured by Altera and sold by Altera or its 
+# authorized distributors.  Please refer to the applicable 
+# agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 15.0.0 Build 145 04/22/2015 SJ Full Version
+# Date created = 20:16:49  December 16, 2025
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		FINAL_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE6E22C8
+set_global_assignment -name TOP_LEVEL_ENTITY FINAL
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 15.0.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "20:16:49  DECEMBER 16, 2025"
+set_global_assignment -name LAST_QUARTUS_VERSION 15.0.0
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.2V
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name VHDL_FILE FINAL.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform29.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform30.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform31.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform32.vwf
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_23 -to CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CODE_OUT[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CODE_OUT[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CODE_OUT[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to K1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to K2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to K3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to K4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to K5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to K6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to K7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DB0
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DB2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DB3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DB4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DB1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DB5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_E
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_RS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to WAVE_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DB7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LCD_DB6
+set_instance_assignment -name IO_STANDARD "3.0-V LVTTL" -to Again
+set_location_assignment PIN_58 -to K1
+set_location_assignment PIN_54 -to K2
+set_location_assignment PIN_52 -to K3
+set_location_assignment PIN_50 -to K4
+set_location_assignment PIN_46 -to K5
+set_location_assignment PIN_43 -to K6
+set_location_assignment PIN_39 -to K7
+set_location_assignment PIN_86 -to LCD_E
+set_location_assignment PIN_98 -to LCD_RS
+set_location_assignment PIN_84 -to LCD_DB0
+set_location_assignment PIN_80 -to LCD_DB1
+set_location_assignment PIN_76 -to LCD_DB2
+set_location_assignment PIN_74 -to LCD_DB3
+set_location_assignment PIN_72 -to LCD_DB4
+set_location_assignment PIN_70 -to LCD_DB5
+set_location_assignment PIN_68 -to LCD_DB6
+set_location_assignment PIN_66 -to LCD_DB7
+set_location_assignment PIN_32 -to WAVE_OUT
+set_global_assignment -name CDF_FILE output_files/Chain5.cdf
+set_global_assignment -name CDF_FILE quartus/bin32/Chain6.cdf
+set_global_assignment -name CDF_FILE quartus/bin64/Chain1.cdf
+set_location_assignment PIN_34 -to Again
+set_global_assignment -name CDF_FILE quartus/bin64/Chain2.cdf
+set_global_assignment -name CDF_FILE Chain3.cdf
+set_global_assignment -name CDF_FILE Chain4.cdf
+set_global_assignment -name CDF_FILE Chain5.cdf
+set_global_assignment -name CDF_FILE Chain6.cdf
+set_global_assignment -name CDF_FILE Chain7.cdf
+set_global_assignment -name CDF_FILE Chain1.cdf
+set_global_assignment -name CDF_FILE Chain2.cdf
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

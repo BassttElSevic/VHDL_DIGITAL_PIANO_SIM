@@ -1,0 +1,86 @@
+-- 为了模块化的编程，我们要、给它拆细一点点
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+-- 第一步：先定义编码器实体（放在主实体前面）
+ENTITY CODER IS
+    PORT (
+        K1IN : IN STD_LOGIC;
+        K2IN : IN STD_LOGIC;
+        K3IN : IN STD_LOGIC;
+        K4IN : IN STD_LOGIC;
+        K5IN : IN STD_LOGIC;
+        K6IN : IN STD_LOGIC;
+        K7IN : IN STD_LOGIC;
+        -- 输出是3位二进制，对应7个按键
+        CODER_OUTPUT : OUT STD_LOGIC_VECTOR(2 downto 0)
+    );
+END ENTITY CODER;  -- 注意：这里要有分号
+ARCHITECTURE BEHAVIOR OF CODER IS
+BEGIN
+    -- 这里的所有赋值都是并发执行的
+    CODER_OUTPUT <= 
+        "000" WHEN K1IN = '1' ELSE
+        "001" WHEN K2IN = '1' ELSE
+        "010" WHEN K3IN = '1' ELSE
+        "011" WHEN K4IN = '1' ELSE
+        "100" WHEN K5IN = '1' ELSE
+        "101" WHEN K6IN = '1' ELSE
+        "110" WHEN K7IN = '1' ELSE
+        "111";
+END ARCHITECTURE BEHAVIOR;
+-- 为了完成这个大项目的编程，我们先从，普通的方波产生开始写，接下来才写LCD
+-- 首先，定义我们的输入端口。我们有八个输入口
+ENTITY FINAL IS
+		PORT
+		(
+				K1 : IN STD_LOGIC;
+				K2 : IN STD_LOGIC;
+				K3 : IN STD_LOGIC;
+				K4 : IN STD_LOGIC;
+				K5 : IN STD_LOGIC;
+				K6 : IN STD_LOGIC;
+				K7 : IN STD_LOGIC;
+				-- 第八个键比较特殊，是重复按键
+				Again : IN STD_LOGIC;
+				-- 接下来，是我们的CLK
+				CLK : IN STD_LOGIC;
+				--然后,是我们的输出
+				OUTPUT : STD_LOGIC_VECTOR(2 downto 0) 
+		);
+END ENTITY;
+-- 按照要求，我们要采取模块化的设计思想，所以，我们要先整个优先3-8编码器出来
+ARCHITECTURE LOGIC OF FINAL IS
+COMPONENT CODER IS
+		PORT
+		(
+				K1IN : IN STD_LOGIC;
+				K2IN : IN STD_LOGIC;
+				K3IN : IN STD_LOGIC;
+				K4IN : IN STD_LOGIC;
+				K5IN : IN STD_LOGIC;
+				K6IN : IN STD_LOGIC;
+				K7IN : IN STD_LOGIC;
+				-- 我们的输出，其实，只用一个数组就好了
+				CODER_OUTPUT : out STD_LOGIC_VECTOR(2 downto 0)
+		);
+END COMPONENT;
+ -- 信号定义：用于连接编码器输出
+SIGNAL KEY_CODE : STD_LOGIC_VECTOR(2 DOWNTO 0);  -- 编码器输出信号    
+-- 测试用：方波信号（后续扩展用）
+SIGNAL SQUARE_WAVE : STD_LOGIC := '0';
+BEGIN
+    -- 实例化编码器元件
+    -- 格式：标签: 元件名 PORT MAP(端口映射);
+KEY_ENCODER: CODER 
+		PORT MAP(
+				K1IN => K1,      -- 将主实体输入连接到编码器输入
+				K2IN => K2,
+				K3IN => K3,
+				K4IN => K4,
+				K5IN => K5,
+				K6IN => K6,
+				K7IN => K7,
+				CODER_OUTPUT => KEY_CODE  -- 编码器输出连接到内部信号
+    );
+OUTPUT <= ENCODED_VALUE；
+END ARCHITECTURE LOGIC;
